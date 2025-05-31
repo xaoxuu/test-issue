@@ -31,8 +31,8 @@ body:
         请在下方的 `JSON` 块中填写，字段说明：
         - title: 友链标题
         - url: 友链地址
-        - avatar: 头像（网站图标）
-        - thumbnail: 缩略图（网站截图）
+        - icon: 网站图标
+        - screenshot: 网站截图
         - description: 一句话简介
         - rss: 订阅地址（抓取并显示最新文章）
         -->
@@ -41,8 +41,8 @@ body:
         {
             "title": "",
             "url": "",
-            "avatar": "",
-            "thumbnail": "",
+            "icon": "",
+            "screenshot": "",
             "description": "",
             "rss": ""
         }
