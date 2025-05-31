@@ -22,7 +22,7 @@ jobs:
       #   uses: actions/checkout@v3
       - uses: xaoxuu/test-action-linkchecker@main
         with:
-          
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           exclude_labels: '["审核中", "缺少互动", "缺少文章", "风险网站"]' # 排除掉具有哪些标签的issue
       # - name: Setup Git Config
       #   run: |
