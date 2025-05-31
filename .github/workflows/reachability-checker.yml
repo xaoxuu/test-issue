@@ -25,6 +25,7 @@ jobs:
       - name: Check Reachability
         uses: xaoxuu/test-action-linkchecker@main
         with:
+          checker: 'reachability'
           exclude_labels: '["审核中", "缺少互动", "缺少文章", "风险网站"]' # 排除掉具有哪些标签的issue
       # 检查完毕后重新生成一下JSON
       - uses: xaoxuu/test-action-issue2json@main
