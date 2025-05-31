@@ -26,7 +26,6 @@ body:
       label: 友链信息
       description: 请在双引号中填写，不要修改格式。
       value: |
-      
         <--
         请在下方的 `JSON` 块中填写，字段说明：
         - title: 友链标题
