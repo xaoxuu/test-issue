@@ -11,13 +11,13 @@ body:
         - required: true
           label: 合法的、非营利性、无商业广告、无木马植入。
         - required: false
-          label: 有实质性原创内容的 HTTPS 站点，发布过至少 5 篇原创文章，内容题材不限。
+          label: 有实质性原创内容的 HTTPS 站点，发布过至少 10 篇原创文章，内容题材不限。
         - required: false
           label: 有独立域名，非免费域名。
         - required: false
           label: 博客已运行至少半年，非刚搭建好。
         - required: false
-          label: 先友后链：与 xaoxuu 有至少**半年**的双向有效互动。
+          label: 先友后链：与博主有至少**半年**的双向有效互动，例如互相留言评论、issue、PR等。
   - type: textarea
     id: config-file
     validations:
@@ -31,10 +31,18 @@ body:
             "title": "",
             "url": "",
             "avatar": "",
-            "screenshot": "",
-            "description": ""
+            "thumbnail": "",
+            "description": "",
+            "rss": ""
         }
         ```
+        字段说明：
+        - title：友链标题
+        - url: 友链地址
+        - avatar: 头像（网站图标）
+        - thumbnail: 缩略图（网站截图）
+        - description: 一句话简介
+        - rss: 订阅地址（抓取并显示最新文章）
   - type: input
     id: friends-html
     attributes:
