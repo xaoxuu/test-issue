@@ -19,7 +19,7 @@ body:
         - required: false
           label: 先友后链：与博主有至少**半年**的双向有效互动，例如互相留言评论、issue、PR等。
   - type: textarea
-    id: config-file
+    id: json-data
     validations:
       required: true
     attributes:
@@ -53,7 +53,7 @@ body:
     id: friends-html
     attributes:
       label: 友链地址
-      description: 请输入您的友链页面地址。
+      description: 请输入您的友链页面地址，用于 Actions 自动检测。
       placeholder: "如: https://xaoxuu.com/friends/"
     validations:
       required: true
@@ -61,5 +61,5 @@ body:
     id: friends-repo
     attributes:
       label: 友链仓库（可选）
-      description: 如果您使用 issue 作为友链源，请附上 issue 仓库链接。
+      description: 如果您使用 issue 作为友链源，请附上 issue 仓库链接，博主将会前往您的仓库自行填写友链。
       placeholder: "如: https://github.com/xaoxuu/friends/"
