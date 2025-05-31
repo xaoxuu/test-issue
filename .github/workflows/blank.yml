@@ -32,7 +32,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: xaoxuu/test-action@main
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Setup Git Config
         run: |
           git config --global user.name 'github-actions[bot]'
