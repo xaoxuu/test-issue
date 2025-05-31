@@ -9,6 +9,8 @@ on:
     branches: [ "main" ]
   issues:
     types: [opened, edited, labeled, unlabeled]
+  watch:
+    types: [started]  # 监听 star 事件
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
