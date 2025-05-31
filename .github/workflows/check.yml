@@ -18,8 +18,8 @@ jobs:
       issues: write
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # - name: Checkout repository
-      #   uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - uses: xaoxuu/test-action-linkchecker@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
