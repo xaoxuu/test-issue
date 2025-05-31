@@ -1,40 +1,31 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
+name: Issue to Json
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
   issues:
-    types: [opened, edited, labeled, unlabeled]
-  watch:
-    types: [started]  # 监听 star 事件
-
-  # Allows you to run this workflow manually from the Actions tab
+    # 新增（打开）/编辑/关闭/设置标签/移除标签
+    types: [opened, edited, closed, labeled, unlabeled]
+  # 手动触发
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  issue2json:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: xaoxuu/test-action-issue2json@main
         with:
-          sort: created-desc
-          exclude_labels: '["审核中", "缺少互动", "缺少文章", "风险网站"]'
-          
+          data_version: 'v2'
+          data_path: '/v2/data.json'
+          sort: 'created-desc' # 'created-desc'/'created-asc'/'updated-desc'/'updated-asc'
+          exclude_labels: '["审核中", "缺少互动", "缺少文章", "风险网站"]' # 排除掉具有哪些标签的issue
       - name: Setup Git Config
         run: |
           git config --global user.name 'github-actions[bot]'
