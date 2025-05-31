@@ -24,16 +24,21 @@ jobs:
         with:
           # github_token: ${{ secrets.GITHUB_TOKEN }}
           exclude_labels: '["审核中", "缺少互动", "缺少文章", "风险网站"]' # 排除掉具有哪些标签的issue
-      # 执行完毕后重新生产一下JSON
-      - uses: ./.github/workflows/issue2json.yml 
-      # - name: Setup Git Config
-      #   run: |
-      #     git config --global user.name 'github-actions[bot]'
-      #     git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-      # - name: Commit and Push to output branch
-      #   run: |
-      #     git fetch origin output || true
-      #     git checkout -B output
-      #     git add --all
-      #     git commit -m "Update data from issues" || echo "No changes to commit"
-      #     git push -f origin output
+      # 检查完毕后重新生成一下JSON
+      - uses: xaoxuu/test-action-issue2json@main
+        with:
+          data_version: 'v2'
+          data_path: '/v2/data.json'
+          sort: 'created-desc' # 'created-desc'/'created-asc'/'updated-desc'/'updated-asc'
+          exclude_labels: '["审核中", "缺少互动", "缺少文章", "风险网站"]' # 排除掉具有哪些标签的issue
+      - name: Setup Git Config
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Commit and Push to output branch
+        run: |
+          git fetch origin output || true
+          git checkout -B output
+          git add --all
+          git commit -m "Update data from issues" || echo "No changes to commit"
+          git push -f origin output
