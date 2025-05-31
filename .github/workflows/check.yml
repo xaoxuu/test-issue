@@ -24,6 +24,8 @@ jobs:
         with:
           # github_token: ${{ secrets.GITHUB_TOKEN }}
           exclude_labels: '["审核中", "缺少互动", "缺少文章", "风险网站"]' # 排除掉具有哪些标签的issue
+      # 执行完毕后重新生产一下JSON
+      - uses: ./.github/workflows/issue2json.yml 
       # - name: Setup Git Config
       #   run: |
       #     git config --global user.name 'github-actions[bot]'
