@@ -26,6 +26,17 @@ body:
       label: 友链信息
       description: 请在双引号中填写，不要修改格式。
       value: |
+      
+        <--
+        请在下方的 JSON 块中填写，字段说明：
+        - title: 友链标题
+        - url: 友链地址
+        - avatar: 头像（网站图标）
+        - thumbnail: 缩略图（网站截图）
+        - description: 一句话简介
+        - rss: 订阅地址（抓取并显示最新文章）
+        -->
+        
         ```json
         {
             "title": "",
@@ -36,14 +47,7 @@ body:
             "rss": ""
         }
         ```
-        
-        字段说明：
-        - title：友链标题
-        - url: 友链地址
-        - avatar: 头像（网站图标）
-        - thumbnail: 缩略图（网站截图）
-        - description: 一句话简介
-        - rss: 订阅地址（抓取并显示最新文章）
+
         
   - type: input
     id: friends-html
