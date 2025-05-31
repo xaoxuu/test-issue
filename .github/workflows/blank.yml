@@ -32,6 +32,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: xaoxuu/test-action@main
         with:
+          sort: created-desc
+          exclude_labels: '["审核中", "缺少互动", "缺少文章", "风险网站"]'
           
       - name: Setup Git Config
         run: |
