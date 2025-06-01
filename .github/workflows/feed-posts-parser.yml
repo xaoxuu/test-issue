@@ -1,0 +1,42 @@
+name: Feed Posts Parser
+
+on:
+  workflow_dispatch: # Allows manual triggering
+  # schedule:
+  #   - cron: '0 5 * * *' # Runs daily at 5 AM UTC
+
+jobs:
+  feed-parser:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: output
+      - name: Run Feed Post Parser Action
+        uses: ./ # Refers to the action in the current repository
+        with:
+          data_path: 'v2/data.json'
+          posts_count: '2'
+          date_format: 'YYYY-MM-DD HH:mm'
+      # 检查完毕后重新生成一下JSON
+      - name: Generate data.json
+        uses: xaoxuu/issues2json@main
+        with:
+          data_version: 'v2'
+          data_path: '/v2/data.json'
+          sort: 'version-desc' # created-desc/created-asc/updated-desc/updated-asc/version-desc
+          exclude_labels: '审核中, 风险网站, 无法访问, 无效主题' # 具有哪些标签的issue不生成到JSON中
+      - name: Setup Git Config
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+      - name: Commit and Push to output branch
+        run: |
+          git fetch origin output || true
+          git checkout -B output
+          git add --all
+          git commit -m "Update data from issues" || echo "No changes to commit"
+          git push -f origin output
