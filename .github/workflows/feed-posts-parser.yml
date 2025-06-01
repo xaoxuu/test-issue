@@ -21,14 +21,7 @@ jobs:
           data_path: 'v2/data.json'
           posts_count: '2'
           date_format: 'YYYY-MM-DD HH:mm'
-      # 检查完毕后重新生成一下JSON
-      - name: Generate data.json
-        uses: xaoxuu/issues2json@main
-        with:
-          data_version: 'v2'
-          data_path: '/v2/data.json'
-          sort: 'version-desc' # created-desc/created-asc/updated-desc/updated-asc/version-desc
-          exclude_labels: '审核中, 风险网站, 无法访问, 无效主题' # 具有哪些标签的issue不生成到JSON中
+      # 更新完毕后提交一下
       - name: Setup Git Config
         run: |
           git config --global user.name 'github-actions[bot]'
