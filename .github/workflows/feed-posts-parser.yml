@@ -11,11 +11,7 @@ jobs:
     permissions:
       issues: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          ref: output
-      - name: Run Feed Post Parser Action
+      - name: Run Feed Post Parser
         uses: xaoxuu/feed-posts-parser@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
