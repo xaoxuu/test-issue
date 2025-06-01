@@ -11,4 +11,5 @@ jobs:
     steps:
       - name: friends-data-migration
         uses: xaoxuu/friends-data-migration@main
-       
+        env: # More info about the environment variables in the README
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this as is, it's automatically generated
