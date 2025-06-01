@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v4
       # 检查示例博客主题状态
       - name: Check Showcase
-        uses: xaoxuu/test-action-linkchecker@main
+        uses: xaoxuu/linkchecker@main
         with:
           checker: 'theme'
           exclude_labels: '审核中, 白名单' # 具有哪些标签的issue不进行检查
