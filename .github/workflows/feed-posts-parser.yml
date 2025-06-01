@@ -16,7 +16,7 @@ jobs:
         with:
           ref: output
       - name: Run Feed Post Parser Action
-        uses: ./ # Refers to the action in the current repository
+        uses: xaoxuu/feed-posts-parser@main
         with:
           data_path: 'v2/data.json'
           posts_count: '2'
