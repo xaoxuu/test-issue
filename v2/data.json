@@ -1,0 +1,83 @@
+{
+  "version": "v2",
+  "content": [
+    {
+      "title": "xaoxuu",
+      "url": "https://xaoxuu.com",
+      "icon": "https://avatars.githubusercontent.com/u/16400144?v=4",
+      "description": "风暴前夕",
+      "feed": "https://xaoxuu.com/atom.xml",
+      "snapshot": "https://bu.dusays.com/2022/10/23/63542895cfd29.png",
+      "posts": [
+        {
+          "title": "博客真的需要图片点击放大功能吗？",
+          "link": "https://xaoxuu.com/blog/20240208/",
+          "published": "2024-02-08 00:00"
+        },
+        {
+          "title": "我为什么开发了一个专栏功能？",
+          "link": "https://xaoxuu.com/blog/20240203/",
+          "published": "2024-02-03 00:00"
+        }
+      ],
+      "issue_number": 2,
+      "labels": [
+        {
+          "name": "documentation",
+          "color": "0075ca"
+        },
+        {
+          "name": "v1.30.0",
+          "color": "ededed"
+        }
+      ]
+    },
+    {
+      "title": "https://www.cayzlh.com/",
+      "url": "https://www.cayzlh.com/",
+      "icon": "https://avatars.githubusercontent.com/u/16400144?v=4",
+      "description": "",
+      "rss": "",
+      "feed": "",
+      "snapshot": "",
+      "issue_number": 8,
+      "labels": [
+        {
+          "name": "v1.29.0",
+          "color": "ededed"
+        }
+      ]
+    },
+    {
+      "title": "https://easyf12.top/",
+      "icon": "https://avatars.githubusercontent.com/u/16400144?v=4",
+      "description": "",
+      "rss": "",
+      "feed": "",
+      "snapshot": "",
+      "issue_number": 9,
+      "labels": [
+        {
+          "name": "v1.26.4",
+          "color": "ededed"
+        }
+      ]
+    },
+    {
+      "title": "mhuig",
+      "url": "https://blog.mhuig.top",
+      "icon": "https://avatars.githubusercontent.com/u/16400144?v=4",
+      "description": "",
+      "rss": "",
+      "feed": "",
+      "snapshot": "",
+      "issue_number": 6,
+      "labels": [
+        {
+          "name": "白名单",
+          "color": "7057ff"
+        }
+      ]
+    }
+  ]
+}
