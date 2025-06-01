@@ -27,8 +27,9 @@ jobs:
         with:
           checker: 'theme'
           exclude_labels: '审核中, 白名单' # 具有哪些标签的issue不进行检查
-          theme_checker_meta_tag: 'meta[theme-name="Stellar"]'
-          theme_checker_invalid_label: '未使用Stellar主题'
+          theme_checker_meta_tag: '' # 'meta[theme-name="Stellar"]'
+          # theme_checker_invalid_label: '未使用Stellar主题'
+          theme_checker_is_volantis: true
       # 检查完毕后重新生成一下JSON
       - name: Generate data.json
         uses: xaoxuu/test-action-issue2json@main
